@@ -1,14 +1,29 @@
 const gridContiner = document.querySelector(".grid-container")
 
-for (i = 0; i < 16; i++){
-    const rowDiv = document.createElement("div")
-    rowDiv.classList.add("row")
-    gridContiner.appendChild(rowDiv)
-    for (j = 0; j < 16; j++){
-        const Coldiv = document.createElement("div")
-        Coldiv.classList.add("square")
-        Coldiv.style.width = 960/16;
-        Coldiv.style.height = 960/16;
-        rowDiv.appendChild(Coldiv)
+function createGrid(dimension){
+    for (i = 0; i < dimension; i++){
+        const rowDiv = document.createElement("div")
+        rowDiv.classList.add("row")
+        gridContiner.appendChild(rowDiv)
+        for (j = 0; j < dimension; j++){
+            const colDiv = document.createElement("div")
+            colDiv.addEventListener('mouseenter', (event) => {
+                colDiv.style.backgroundColor = "black";
+                colDiv.style.transition = "background-color"
+            })
+            colDiv.addEventListener('mouseleave', (event) =>{
+                colDiv.style.backgroundColor = "white";
+                colDiv.style.transition = "background-color 2s"
+            })
+            colDiv.classList.add("square")
+            rowDiv.appendChild(colDiv)
+        }
     }
 }
+
+const button = document.querySelector(".popup")
+button.addEventListener("click", () => {
+    let dimension = prompt("Grid size?");
+    createGrid(dimension)
+})
+
