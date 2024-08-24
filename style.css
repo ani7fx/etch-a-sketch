@@ -2,27 +2,38 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    margin:0 auto;
-    padding: 0px;
-    height: 960px;
-    width: 960px;
+    /* align-items: center; */
+    height: 420px;
+    width: 420px;
+}
+.row{
+    display: flex;
 }
 .square{
     /* flex: 0 0 6.25%; */
-    text-align: center;
+    flex: 1;
     display: flex;
     justify-content: center;
-    margin: 3px;
+    margin: 0;
     position: relative;
-    padding: 1rem;
+    /* padding: 1rem; */
+    box-sizing: border-box;
     border: 1px solid rgb(25, 127, 205);
 }
 
-.buttonDiv{
+.popup{
+    height: 40px;
+    margin: 20px;
+}
+
+body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin-top: 40px; */
-    height: 200px;
+}
+
+.color-pick{
+    height: 40px;
+    margin: 20px;
 }
